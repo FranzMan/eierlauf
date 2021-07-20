@@ -1,0 +1,22 @@
+{
+    "name": "Eierlauf",
+    "description": "",
+    "dependencies": {
+        "core": "*",
+        "radio": "*",
+        "callibot2": "github:knotechgmbh/callibot2#v0.1.1"
+    },
+    "files": [
+        "main.blocks",
+        "main.ts",
+        "README.md",
+        "main.py"
+    ],
+    "testFiles": [
+        "test.ts"
+    ],
+    "supportedTargets": [
+        "calliopemini"
+    ],
+    "preferredEditor": "blocksprj"
+}
