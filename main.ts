@@ -12,7 +12,7 @@ while (!(input.buttonIsPressed(Button.A))) {
             level = 1
         }
     }
-    basic.showString("" + (level))
+    basic.showNumber(level)
 }
 basic.showIcon(IconNames.Yes)
 basic.pause(1000)

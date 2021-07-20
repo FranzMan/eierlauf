@@ -1,16 +1,18 @@
 """
 
-da die Variablen mit let deklariert werden, sind diese nur innerhalb ihres Blockes nutzbar
-
-wird in javascrpt etwas mit var erzeugt, ist es nicht konvertierbar zu den Blöcken
+egal welcher weitere block mit variable level eingesetzt wird - es wird ein Fehler geworfen, aber nur fürs herunterladen
 
 """
 LED_Y = 0
 LED_X = 0
 level = 1
 while not (input.button_is_pressed(Button.A)):
-    if True:
-        pass
+    if input.button_is_pressed(Button.B):
+        if level < 9:
+            level += 1
+        else:
+            level = 1
+    basic.show_string("" + str((level)))
 basic.show_icon(IconNames.YES)
 basic.pause(1000)
 
