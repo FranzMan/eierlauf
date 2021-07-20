@@ -1,13 +1,18 @@
 /**
- * da die Variablen mit let deklariert werden, sind diese nur innerhalb ihres Blockes nutzbar
- * 
- * wird in javascrpt etwas mit var erzeugt, ist es nicht konvertierbar zu den Blöcken
+ * egal welcher weitere block mit variable level eingesetzt wird - es wird ein Fehler geworfen, aber nur fürs herunterladen
  */
 let LED_Y = 0
 let LED_X = 0
 let level = 1
 while (!(input.buttonIsPressed(Button.A))) {
-	
+    if (input.buttonIsPressed(Button.B)) {
+        if (level < 9) {
+            level += 1
+        } else {
+            level = 1
+        }
+    }
+    basic.showString("" + (level))
 }
 basic.showIcon(IconNames.Yes)
 basic.pause(1000)
