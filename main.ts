@@ -1,5 +1,9 @@
 /**
  * egal welcher weitere block mit variable level eingesetzt wird - es wird ein Fehler geworfen, aber nur fürs herunterladen
+ * 
+ * while-löschen hilft, dauerhaft löschen hilft - zu viele Blöcke?
+ * 
+ * Bei Hinzufügen von Melodie auch
  */
 let LED_Y = 0
 let LED_X = 0
@@ -11,8 +15,8 @@ while (!(input.buttonIsPressed(Button.A))) {
         } else {
             level = 1
         }
+        basic.showNumber(level)
     }
-    basic.showNumber(level)
 }
 basic.showIcon(IconNames.Yes)
 basic.pause(1000)
@@ -36,7 +40,7 @@ basic.forever(function () {
     if (LED_X < 0 || LED_X > 5 || (LED_Y > 5 || LED_Y < 0)) {
         basic.setLedColor(0xff0000)
         basic.showIcon(IconNames.No)
-        music.startMelody(music.builtInMelody(Melodies.Funeral), MelodyOptions.Once)
+        music.playTone(262, music.beat(BeatFraction.Double))
         basic.pause(2000)
         basic.turnRgbLedOff()
     }
